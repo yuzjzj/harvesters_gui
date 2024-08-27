@@ -21,7 +21,7 @@
 # Standard library imports
 
 # Related third party imports
-from PyQt5.QtGui import QIcon
+from qtpy.QtGui import QIcon
 
 # Local application/library specific imports
 from harvesters_gui._helper import get_package_root

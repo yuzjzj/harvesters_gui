@@ -25,10 +25,10 @@ import sys
 import time
 
 # Related third party imports
-from PyQt5.QtCore import QMutexLocker, QMutex, pyqtSignal, QThread
-from PyQt5.QtGui import QKeySequence
-from PyQt5.QtWidgets import QMainWindow, QAction, QComboBox, \
-    QDesktopWidget, QFileDialog, QDialog, QShortcut, QApplication
+from qtpy.QtCore import QMutexLocker, QMutex, Signal, QThread
+from qtpy.QtGui import QKeySequence
+from qtpy.QtWidgets import QMainWindow, QAction, QComboBox, \
+    QFileDialog, QDialog, QShortcut, QApplication
 
 from genicam.gentl import NotInitializedException, InvalidHandleException, \
     InvalidIdException, ResourceInUseException, \
@@ -52,8 +52,8 @@ from harvesters.util.logging import get_logger
 
 class Harvester(QMainWindow):
     #
-    _signal_update_statistics = pyqtSignal(str)
-    _signal_stop_image_acquisition = pyqtSignal()
+    _signal_update_statistics = Signal(str)
+    _signal_stop_image_acquisition = Signal()
 
     def __init__(self, *, vsync=True, logger=None):
         #
@@ -177,7 +177,7 @@ class Harvester(QMainWindow):
 
         # Place it in the center.
         rectangle = self.frameGeometry()
-        coordinate = QDesktopWidget().availableGeometry().center()
+        coordinate = QApplication.primaryScreen().availableGeometry().center()
         rectangle.moveCenter(coordinate)
         self.move(rectangle.topLeft())
 

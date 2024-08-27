@@ -21,7 +21,7 @@
 # Standard library imports
 
 # Related third party imports
-from PyQt5.QtWidgets import QAction
+from qtpy.QtWidgets import QAction
 
 # Local application/library specific imports
 from harvesters._private.core.subject import Subject

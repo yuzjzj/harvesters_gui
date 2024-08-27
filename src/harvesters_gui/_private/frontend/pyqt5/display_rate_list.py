@@ -21,7 +21,7 @@
 # Standard library imports
 
 # Related third party imports
-from PyQt5.QtWidgets import QComboBox
+from qtpy.QtWidgets import QComboBox
 
 # Local application/library specific imports
 from harvesters_gui._private.frontend.pyqt5.helper import get_system_font

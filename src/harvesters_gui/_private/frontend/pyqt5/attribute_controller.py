@@ -22,9 +22,9 @@
 import sys
 
 # Related third party imports
-from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtGui import QKeySequence
-from PyQt5.QtWidgets import QMainWindow, QApplication, QTreeView, \
+from qtpy.QtCore import Slot
+from qtpy.QtGui import QKeySequence
+from qtpy.QtWidgets import QMainWindow, QApplication, QTreeView, \
     QAction, QComboBox, QLineEdit, QLabel, QShortcut
 
 from genicam.genapi import EVisibility
@@ -217,7 +217,7 @@ class AttributeController(QMainWindow):
         self._proxy.setVisibility(visibility)
         self._view.expandAll()
 
-    @pyqtSlot('QString')
+    @Slot('QString')
     def _invalidate_feature_tree_by_keyword(self, keyword):
         self._proxy.setKeyword(keyword)
         self._view.expandAll()

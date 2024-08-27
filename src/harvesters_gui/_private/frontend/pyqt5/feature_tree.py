@@ -23,12 +23,12 @@ import re
 import sys
 
 # Related third party imports
-from PyQt5.Qt import Qt, QStyledItemDelegate, QColor
-from PyQt5.QtCore import QAbstractItemModel, QModelIndex, \
-    QSortFilterProxyModel
-from PyQt5.QtWidgets import QApplication, QTreeView, \
+from qtpy.QtGui import QColor
+from qtpy.QtCore import QAbstractItemModel, QModelIndex, \
+    QSortFilterProxyModel, Qt
+from qtpy.QtWidgets import QApplication, QTreeView, \
     QSpinBox, QPushButton, QComboBox, QWidget, \
-    QLineEdit
+    QLineEdit, QStyledItemDelegate
 
 from genicam.genapi import NodeMap
 from genicam.genapi import EInterfaceType, EAccessMode, EVisibility

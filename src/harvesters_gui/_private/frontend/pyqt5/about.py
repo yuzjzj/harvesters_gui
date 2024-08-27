@@ -22,9 +22,9 @@
 import sys
 
 # Related third party imports
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPainter, QPixmap
-from PyQt5.QtWidgets import QDialog, QApplication, QPlainTextEdit, \
+from qtpy.QtCore import Qt
+from qtpy.QtGui import QPainter, QPixmap
+from qtpy.QtWidgets import QDialog, QApplication, QPlainTextEdit, \
     QVBoxLayout, QHBoxLayout, QLineEdit, QFrame, QPushButton, \
     QTextEdit
 
@@ -169,7 +169,7 @@ class Acknowledgements(QDialog):
         self._text = QPlainTextEdit(content)
         self._text.setReadOnly(True)
         self._text.setFont(get_system_font())
-        self._text.setLineWrapMode(True)
+        self._text.setLineWrapMode(QPlainTextEdit.LineWrapMode.WidgetWidth)
         self._text.setFixedWidth(480)
 
         layout.addWidget(self._text)
