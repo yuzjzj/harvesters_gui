@@ -148,7 +148,7 @@ class Harvester(QMainWindow):
 
     @property
     def cti_files(self):
-        return self.harvester_core.cti_files
+        return self.harvester_core.files
 
     @property
     def harvester_core(self):
@@ -539,7 +539,7 @@ class Harvester(QMainWindow):
             self.harvester_core.reset()
 
             # Update the path to the target GenTL Producer.
-            self.harvester_core.add_cti_file(file_path)
+            self.harvester_core.add_file(file_path)
 
             # Update the device list.
             self.harvester_core.update()
